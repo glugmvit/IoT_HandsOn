@@ -8,11 +8,13 @@
 
 
 //This variable is a "boolean"; it can either be true or false / high or low / 1 or 0 / ON or OFF.
-//We use it to store the current status of the LED. Initially we keep the LED OFF
+//We use it to store the current status of the LED. Initially we keep the LED OFF.
 bool mode = 0;
+
 
 //This variable is an integer containing the delay between LED toggles, in milliseconds.
 int interval = 100;
+
 
 //This function is executed once, when the board is switched on/reset.
 //All initializations, such as I/O pins, Serial port, WiFi etc are done here.
@@ -37,9 +39,9 @@ void loop(){
   /*
    * Main logic of the program:
    *  If the LED is ON, switch it OFF.
-   *  else switch in ON.
+   *  else switch it ON.
    *  
-   *  Notice the ' ~ ' symbol before HIGH and LOW. It is used to invert logic; ie, LOW becomes HIGH and vice versa.
+   *  Notice the ' ~ ' symbol before HIGH and LOW. It is used to invert logic; i.e., LOW becomes HIGH and vice versa.
    *  This is required because NodeMCU inverts logic internally.
    *  So, the final logic would be HIGH->LOW->HIGH
    *  This is different for different boards. For example, in an Arduino Uno board, the command would simply be:
@@ -51,6 +53,9 @@ void loop(){
     digitalWrite(LED_BUILTIN, ~LOW);
 
   mode = ~mode;
+
+  //Now, the delay
+  delay(interval);
   
 }
 

@@ -11,7 +11,6 @@
  *    USART
  *    SPI
  *    I2C
- *    SMBUS
  *    USB 
  *    
  * In most cases, we will be using UART, since it is the most basic and very easy to use.
